@@ -8,6 +8,7 @@ USER root
 RUN git clone --branch main https://github.com/JGCRI/matilda.git /home/jovyan/matilda 
 
 # Install the Matilda R package using devtools inside the container
+RUN R -e 'install.packages("devtools", repos="https://cloud.r-project.org")'
 RUN R -e 'library("devtools"); devtools::install("/home/jovyan/matilda")'
 
 # Switch back to the non-root 'jovyan' user for better security
