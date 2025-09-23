@@ -1,5 +1,5 @@
 # Use the MSD-LIVE official Jupyter R notebook image as the base
-FROM ghcr.io/msd-live/jupyter/r-notebook:latest AS build-image
+FROM ghcr.io/msd-live/jupyter/datascience-notebook:latest AS build-image
 
 # Switch to the root user to allow installation of system-wide software
 USER root
