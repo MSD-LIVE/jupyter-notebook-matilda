@@ -11,10 +11,4 @@ RUN git clone --branch main https://github.com/JGCRI/matilda.git /home/jovyan/ma
 RUN R -e 'install.packages("devtools", repos="https://cloud.r-project.org")'
 RUN R -e 'library("devtools"); devtools::install("/home/jovyan/matilda")'
 
-# Switch back to the non-root 'jovyan' user for better security
-USER jovyan
-
-# Set the working directory to the jovyan home directory
-WORKDIR /home/jovyan/
-
 COPY notebooks /home/jovyan/notebooks
